@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-PIAPROGWEB-51DC9701-A2E9-42F8-B264-A1648DF50941")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PIAPROGWEB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
