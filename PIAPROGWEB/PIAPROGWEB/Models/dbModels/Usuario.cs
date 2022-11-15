@@ -57,9 +57,6 @@ namespace PIAPROGWEB.Models.dbModels
         [Unicode(false)]
         public string Codpos { get; set; } = null!;
 
-        [ForeignKey("IdRol")]
-        [InverseProperty("Usuarios")]
-        public virtual IdRol IdRolNavigation { get; set; } = null!;
         [InverseProperty("IdUsuarioNavigation")]
         public virtual ICollection<Carrito> Carritos { get; set; }
         [InverseProperty("IdusuarioNavigation")]

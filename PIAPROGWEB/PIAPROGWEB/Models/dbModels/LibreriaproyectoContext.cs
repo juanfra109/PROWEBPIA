@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace PIAPROGWEB.Models.dbModels
 {
-    public partial class LibreriaproyectoContext : DbContext
+    public partial class LibreriaProyectoContext : DbContext
     {
-        public LibreriaproyectoContext()
+        public LibreriaProyectoContext()
         {
         }
 
-        public LibreriaproyectoContext(DbContextOptions<LibreriaproyectoContext> options)
+        public LibreriaProyectoContext(DbContextOptions<LibreriaProyectoContext> options)
             : base(options)
         {
         }
@@ -34,7 +34,7 @@ namespace PIAPROGWEB.Models.dbModels
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.;Database=Libreria-proyecto;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.;Database=Libreria-Proyecto;Trusted_Connection=True;");
             }
         }
 
@@ -109,15 +109,6 @@ namespace PIAPROGWEB.Models.dbModels
                     .HasForeignKey(d => d.Idorden)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ordendetalle_orden");
-            });
-
-            modelBuilder.Entity<Usuario>(entity =>
-            {
-                entity.HasOne(d => d.IdRolNavigation)
-                    .WithMany(p => p.Usuarios)
-                    .HasForeignKey(d => d.IdRol)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_usuarios_idRol");
             });
 
             OnModelCreatingPartial(modelBuilder);
